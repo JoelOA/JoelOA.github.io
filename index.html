@@ -20,7 +20,7 @@
 <body class="bg-white text-gray-900">
     <div class="max-w-5xl mx-auto px-8 py-12 md:py-20">
         <!-- Header/About Section -->
-        <header class="mb-16">
+        <header class="mb-4">
             <div class="flex flex-col md:flex-row md:items-start md:gap-8">
                 <!-- Profile Picture -->
                 <div class="mb-6 md:mb-0 flex-shrink-0">
@@ -41,8 +41,8 @@
                         <p class="mb-4">
                             I am a Computer Engineering Graduate from Ashesi University, interested in the intersection of AI and Robotics. 
                             I currently work as a faculty Intern as Ashesi University, primarily serving as the Teaching Assistant and research.
-                            I have been privileged to explore the following research areas: <span class="font-semibold">Embedded Machine Learning, 
-                            Mobile Robotics</span> and <span class="font-semibold">Motion Capture Systems for Drones.</span>
+                            I have been privileged to explore the following research areas: <span class="font-semibold text-blue-600">Embedded Machine Learning</span>, 
+                            <span class="font-semibold text-blue-600">Mobile Robotics</span> and <span class="font-semibold text-blue-600">Motion Capture Systems for Drones.</span>
                         </p>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
         </header>
 
         <!-- Updates Section -->
-        <section class="mb-16">
+        <section class="mb-4">
             <h2 class="text-2xl font-bold mb-6 border-b border-gray-300 pb-2">Updates</h2>
             <ul class="space-y-3 text-gray-700">
                 <li class="flex items-baseline">
@@ -73,7 +73,7 @@
         </section>
 
         <!-- Papers & Publications -->
-        <section class="mb-16">
+        <section class="mb-4">
             <h2 class="text-2xl font-bold mb-6 border-b border-gray-300 pb-2">Research</h2>
 
             <!--Research (Publication)-->
@@ -84,11 +84,11 @@
                         class="w-full h-full rounded-none border border-gray-200 object-contain">
                 </div>
                 <div class="flex-1">
-                    <h5 class="font-semibold">
+                    <h5 class="font-bold text-lg text-gray-900">
                         Recognition of Walking Terrain Using Machine Learning
                     </h5>
                     <p class="text-sm text-gray-600">
-                        <span class="font-semibold">Joel Osei-Asamoah</span>, Nathan Amanquah
+                        <span class="font-semibold text">Joel Osei-Asamoah</span>, Nathan Amanquah
                     </p>
                     <p class="text-sm text-gray-600 mb-3 italic">
                         IEEE 9th International Conference on Adaptive Science and Technology, 2024
@@ -100,6 +100,33 @@
                         <span class="font-semibold">TL;DR:</span> A machine learning system using accelerometer and altimeter data to classify walking terrains, 
                         with an LSTM model achieving 96% accuracy by capturing temporal dependencies in time-series data, demonstrating potential for real-time 
                         deployment in low-cost wearable devices.
+                    </p>
+                </div>
+            </div>
+            
+            <!--Research (No Publication)-->
+            <!-- Limo Project-->
+            <div class="mb-8 flex flex-col md:flex-row gap-6 items-stretch">
+                <div class="md:w-1/3 flex justify-center">
+                    <img src="assets/limo_demo.gif" alt="Upgrade of Limo Cobot from ROS2 Foxy to Humble"
+                        class="w-full h-full rounded-none border border-gray-200 object-contain">
+                </div>
+                <div class="flex-1">
+                    <h5 class="font-semibold">
+                        Limo Cobot OS Upgrade
+                    </h5>
+                    <p class="text-sm text-gray-600 mb-2">
+                        <span class="font-semibold">Joel Osei-Asamoah</span>, Kojo Anyinam-Boateng
+                    </p>
+                    <p class="text-sm text-gray-600 mb-3 italic">
+                        Ongoing Research | Ashesi University | Aug 2025 - present
+                    </p>
+                    <p class="text-gray-700 leading-relaxed text-[90%]">
+                        To improve the quality of the <em>Introduction to AI and Robotics (CS353)</em> course. I upgraded the Limo cobot platform 
+                        from ROS2 Foxy to ROS2 Humble to give students experience with newer ROS distros. This involved disassembling the Limo to 
+                        access the NVIDIA board's SSD, which I flashed with JetPack 6.1 to establish Ubuntu 22.04 as the new operating system. 
+                        After installing ROS2 Humble, I systematically resolved package dependencies and API compatibility issues. I then validated 
+                        the upgrade by testing all student lab exercises on the platform to ensure full functionality for educational use.
                     </p>
                 </div>
             </div>
@@ -150,7 +177,7 @@
         </section>
 
         <!-- Teaching Section -->
-        <section class="mb-16">
+        <section class="mb-4">
             <h2 class="text-2xl font-bold mb-6 border-b border-gray-300 pb-2">Teaching</h2>
             <div class="space-y-4 text-gray-700">
                 <div>
@@ -177,7 +204,7 @@
         </section>
 
         <!-- Talks Section -->
-        <section class="mb-16">
+        <section class="mb-4">
             <h2 class="text-2xl font-bold mb-6 border-b border-gray-300 pb-2">Talks</h2>
             <div class="space-y-4 text-gray-700">
                 <div>
@@ -191,7 +218,7 @@
         </section>
 
         <!-- Footer -->
-        <footer class="mt-20 pt-8 border-t border-gray-300 text-sm text-gray-500">
+        <footer class="mt-8 pt-8 border-t border-gray-300 text-sm text-gray-500">
             <p>© 2025 Joel Osei-Asamoah. Last updated: October 2025.</p>
             <p>Inspiration for this website design was taken from <a href="https://benedictquartey.github.io/" target="_blank" class="text-blue-600 hover:underline">Benedict Quartey's</a> and <a href="https://ohenebadade.me/" target="_blank" class="text-blue-600 hover:underline">Oheneba Dade's</a> website</p>
         </footer>
