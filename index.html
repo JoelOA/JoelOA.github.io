@@ -12,7 +12,7 @@
 :root{
   --ink:#1b1f27; --muted:#5d6675; --line:#e6e9ef; --bg:#fff;
   --blue:#1f5fd6; --orange:#ef7a1a;
-  --grad:linear-gradient(90deg,#1f5fd6 0%,#7a4fd0 50%,#ef7a1a 100%);
+  --accent:#1f5fd6;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -23,12 +23,12 @@ a{color:var(--blue);text-decoration:none;transition:color .15s ease}
 a:hover{color:var(--orange)}
 a:focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:2px}
 
-/* Key phrases: blue-to-orange gradient, like the inspiration */
-.hl{font-weight:600;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+/* Key phrases: solid accent colour (set in --accent); links turn orange on hover */
+.hl{font-weight:600;color:var(--accent)}
 
 /* Header */
 header{display:flex;gap:36px;align-items:center;margin-bottom:56px}
-.photo{flex:none;width:176px;height:176px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 4px #fff,0 0 0 6px transparent;background:var(--grad);padding:3px}
+.photo{flex:none;width:176px;height:176px;border-radius:50%;object-fit:cover;border:3px solid var(--accent);padding:3px;background:#fff}
 h1{font-size:clamp(2.1rem,5vw,2.9rem);line-height:1.1;margin:0 0 12px;font-weight:700;letter-spacing:-.02em}
 .links{display:flex;flex-wrap:wrap;gap:6px 0;margin:0 0 18px;font-size:.95rem;font-weight:500}
 .links a+a::before{content:"/";color:#b9c0cc;margin:0 .7em;display:inline-block}
@@ -37,7 +37,7 @@ h1{font-size:clamp(2.1rem,5vw,2.9rem);line-height:1.1;margin:0 0 12px;font-weigh
 /* Sections */
 section{margin-bottom:52px}
 h2{font-size:1.45rem;margin:0 0 22px;padding-bottom:10px;font-weight:700;letter-spacing:-.01em;position:relative;border-bottom:1px solid var(--line)}
-h2::after{content:"";position:absolute;left:0;bottom:-1px;width:56px;height:3px;background:var(--grad);border-radius:2px}
+h2::after{content:"";position:absolute;left:0;bottom:-1px;width:56px;height:3px;background:var(--accent);border-radius:2px}
 
 /* Updates */
 .updates{list-style:none;margin:0;padding:0}
@@ -46,9 +46,11 @@ h2::after{content:"";position:absolute;left:0;bottom:-1px;width:56px;height:3px;
 .date{color:var(--muted);font-size:.88rem;font-weight:500;padding-top:2px;font-variant-numeric:tabular-nums}
 
 /* Research */
-.item{display:grid;grid-template-columns:260px 1fr;gap:28px;margin-bottom:36px;align-items:start}
+.item{display:grid;grid-template-columns:260px 1fr;gap:26px;margin-bottom:24px;align-items:center;padding:20px;border:1px solid var(--line);border-radius:12px;background:#fff;transition:border-color .15s ease,box-shadow .15s ease}
 .item:last-child{margin-bottom:0}
-.item img{width:100%;border-radius:6px;border:1px solid var(--line);display:block;background:#fafbfc}
+.item:hover{border-color:#c9d6f2;box-shadow:0 4px 18px rgba(26,71,200,.07)}
+.media{width:100%;height:190px;border-radius:8px;background:#f4f6fa;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.media img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block}
 .item h3{font-size:1.08rem;line-height:1.35;margin:0 0 4px;font-weight:600}
 .authors{margin:0 0 2px;font-size:.9rem;color:var(--muted)}
 .authors strong{color:var(--ink);font-weight:600}
@@ -72,7 +74,8 @@ footer p{margin:0 0 4px}
   header{flex-direction:column;align-items:flex-start;gap:22px}
   .photo{width:140px;height:140px}
   .updates li{grid-template-columns:1fr;gap:0}
-  .item{grid-template-columns:1fr;gap:14px}
+  .item{grid-template-columns:1fr;gap:16px;padding:16px}
+  .media{height:200px}
 }
 </style>
 </head>
@@ -110,7 +113,7 @@ footer p{margin:0 0 4px}
     <h2>Research</h2>
 
     <article class="item">
-      <img src="assets/arap_hardware_testing.gif" alt="Ashesi Assistant Robot Platform in hardware testing" loading="lazy">
+      <div class="media"><img src="assets/arap_hardware_testing.gif" alt="Ashesi Assistant Robot Platform in hardware testing" loading="lazy"></div>
       <div>
         <h3>Ashesi Assistant Robot Platform (ARAP)</h3>
         <p class="authors"><strong>Joel Osei-Asamoah</strong>, Kojo Anyinam-Boateng, Dr. Ayorkor Korsah et al.</p>
@@ -120,7 +123,7 @@ footer p{margin:0 0 4px}
     </article>
 
     <article class="item">
-      <img src="assets/Limo_demo.gif" alt="Limo Cobot running after the upgrade from ROS2 Foxy to Humble" loading="lazy">
+      <div class="media"><img src="assets/Limo_demo.gif" alt="Limo Cobot running after the upgrade from ROS2 Foxy to Humble" loading="lazy"></div>
       <div>
         <h3>Limo Cobot OS Upgrade</h3>
         <p class="authors"><strong>Joel Osei-Asamoah</strong>, Kojo Anyinam-Boateng</p>
@@ -130,7 +133,7 @@ footer p{margin:0 0 4px}
     </article>
 
     <article class="item">
-      <img src="assets/F1Tenth_demo.gif" alt="RoboRacer autonomous racing demo" loading="lazy">
+      <div class="media"><img src="assets/F1Tenth_demo.gif" alt="RoboRacer autonomous racing demo" loading="lazy"></div>
       <div>
         <h3>RoboRacer Autonomous Racing Competition</h3>
         <p class="authors"><strong>Joel Osei-Asamoah</strong>, William Akuffo, et al.</p>
@@ -140,7 +143,7 @@ footer p{margin:0 0 4px}
     </article>
 
     <article class="item">
-      <img src="assets/embedded_ML_demo.gif" alt="Demo of walking terrain recognition" loading="lazy">
+      <div class="media"><img src="assets/embedded_ML_demo.gif" alt="Demo of walking terrain recognition" loading="lazy"></div>
       <div>
         <h3>Recognition of Walking Terrain Using Machine Learning</h3>
         <p class="authors"><strong>Joel Osei-Asamoah</strong>, Nathan Amanquah</p>
